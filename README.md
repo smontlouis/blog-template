@@ -4,7 +4,7 @@ This project is a blog built with Remix, using MDX for content and supporting i1
 
 ## DEMO
 
-[https://remix-mdx-blog-i18n.vercel.app/](https://remix-mdx-blog-i18n.vercel.app/)
+[https://blog-patient-pond-7135.fly.dev/?page=3&lng=fr](https://blog-patient-pond-7135.fly.dev/?page=3&lng=fr)
 
 ## Project Structure
 
