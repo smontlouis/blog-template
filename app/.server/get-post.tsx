@@ -10,12 +10,19 @@ interface GetPostOptions {
   path?: string[]
 }
 
+const simpleCache: Record<string, { code: string; frontmatter: Frontmatter }> =
+  {}
+
 export async function getPost({
   locale,
   path: additionalPath = [],
   slug,
 }: GetPostOptions) {
   invariant(locale === 'en' || locale === 'fr', `Unsupported locale: ${locale}`)
+
+  if (simpleCache[slug]) {
+    return simpleCache[slug]
+  }
 
   const filePath = path.join(
     process.cwd(),
@@ -40,10 +47,14 @@ export async function getPost({
       cwd: path.dirname(filePath),
     })
 
-    return {
+    const response = {
       code,
       frontmatter: frontmatter as Frontmatter,
     }
+
+    simpleCache[slug] = response
+
+    return response
   } catch (error) {
     console.error(`Failed to bundle MDX for file: ${filePath}`, error)
     return null
