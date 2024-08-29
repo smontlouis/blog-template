@@ -2,6 +2,10 @@
 
 This project is a blog built with Remix, using MDX for content and supporting i18n.
 
+## DEMO
+
+[https://remix-mdx-blog-i18n.vercel.app/](https://remix-mdx-blog-i18n.vercel.app/)
+
 ## Project Structure
 
 - The blog is based on Remix framework

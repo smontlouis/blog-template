@@ -16,19 +16,21 @@ export const LanguageSwitcher = () => {
   const lng = searchParams.get('lng')
   const { i18n } = useTranslation()
 
-  useEffect(() => {
-    if (lng) {
-      setSearchParams(
-        (s) => {
-          s.delete('lng')
-          return s
-        },
-        {
-          replace: true,
-        }
-      )
-    }
-  }, [lng])
+  // Useful for removing the language from the URL
+
+  // useEffect(() => {
+  //   if (lng) {
+  //     setSearchParams(
+  //       (s) => {
+  //         s.delete('lng')
+  //         return s
+  //       },
+  //       {
+  //         replace: true,
+  //       }
+  //     )
+  //   }
+  // }, [lng])
 
   return (
     <Center mt="5">
